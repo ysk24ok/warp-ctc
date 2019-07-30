@@ -26,7 +26,7 @@ install:
   
   - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION pytest pytest-pep8
   - source activate test-environment
-  - conda install pytorch torchvision -c pytorch
+  - conda install pytorch==0.4.0 torchvision -c pytorch
   - mkdir build && cd build && cmake .. && make && sudo make install && cd .. && sudo ldconfig
   - cd pytorch_binding && python setup.py install && cd .. && sudo ldconfig
 
